@@ -1,10 +1,8 @@
 set mouse=a
 set ruler
 set term=xterm-256color
-color desertEx
-color fruit
+color jellybeans
 map :Q :q
-color camo
 set nohls
 map <Leader>. :tabn<CR>
 set clipboard=unnamed
