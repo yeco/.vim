@@ -1,0 +1,33 @@
+set mouse=a
+set ruler
+set term=xterm-256color
+color desertEx
+color fruit
+map :Q :q
+color camo
+set nohls
+map <Leader>. :tabn<CR>
+set clipboard=unnamed
+set wrap
+set modelines=0
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set cul
+set ttyfast
+set autoindent
+set showmode
+set showcmd
+set visualbell
+nnoremap / /\v
+vnoremap / /\v
+if exists("&colorcolumn")
+  set colorcolumn=80
+endif
+nnoremap j gj
+nnoremap k gk
+" make x delete and throw away
+" d already deletes and yanks
+noremap x "_x
+omap Q q!
