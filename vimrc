@@ -81,6 +81,11 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Normal mode: <Leader>t
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+" Global Find / Replace:
+map <Leader>r :%s/
+
+map <Leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <CR> <CR> <CR>
+
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>

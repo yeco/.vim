@@ -1,4 +1,4 @@
-set columns=100 lines=50
+set columns=170 lines=40
 
 " Start without the toolbar
 set guioptions-=T
@@ -13,7 +13,7 @@ function StartTerm()
 endfunction
 
 " Project Tree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 
