@@ -40,6 +40,9 @@ map <Leader>z :ZoomWin<CR>
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
+" CoffeeScript compiling
+let coffee_compile_on_save = 1
+
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")

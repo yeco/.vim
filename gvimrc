@@ -44,6 +44,9 @@ function s:UpdateNERDTree(stay)
   endif
 endfunction
 
+" CoffeeScript compile
+let coffee_compile_on_save = 1
+
 " Utility functions to create file commands
 function s:CommandCabbr(abbreviation, expansion)
   execute 'cabbrev ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
