@@ -25,7 +25,6 @@ fi
 
 cd $HOME
 ln -s .vim/vimrc .vimrc               || fail ".vimrc"
-ln -s .vim/vimrc.local .vimrc.local   || fail ".vimrc.local"
 ln -s .vim/gvimrc .gvimrc             || fail ".gvimrc"
 ln -s .vim/gvimrc.local .gvimrc.local || fail ".gvimrc.local"
 
