@@ -1,16 +1,8 @@
+" Environment
 set columns=170 lines=40
-
-" Start without the toolbar
 set guioptions-=T
-
-" Default gui color scheme
-color tir_black
-
-" ConqueTerm wrapper
-function StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
-endfunction
+set guifont=Monospace\ 10
+color jellybeans
 
 " Project Tree
 " autocmd VimEnter * NERDTree
@@ -113,8 +105,3 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
-
-" Include user's local vim config
-if filereadable(expand("~/.gvimrc.local"))
-  source ~/.gvimrc.local
-endif
