@@ -1,3 +1,5 @@
 This is the current state of my .vim folder.
 
 To install: download archive, run make (it will back up your current .vim, .vimrc, and .gvimrc)
+
+Originally forked from https://github.com/isaacs/.vim
