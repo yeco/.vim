@@ -38,7 +38,8 @@ set softtabstop=4
 set expandtab
 set autoindent
 
-set list listchars=tab:\ \ ,trail:·
+" Show · for trailing space, \ \ for trailing tab
+set list listchars=tab:▸▸,trail:·
 
 " Searching
 set hlsearch
@@ -47,9 +48,12 @@ set ignorecase
 set smartcase
 set showmatch
 
+" Quickly clear search highlight
+nnoremap <leader><space> :noh<cr>
+
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+set wildignore+=*.o,.git
 
 " Status bar
 set laststatus=2
@@ -61,9 +65,9 @@ nnoremap k gk
 " Make x store in the same register
 noremap x "_x
 
-" NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+" NERDTree configuration, ignore files ending in ~
+let NERDTreeIgnore=['\~$']
+map <leader>n :NERDTreeToggle<cr>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
@@ -73,19 +77,19 @@ nnoremap <leader>a :Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Strip all trailing whitespace in the current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
 " Sort CSS properties alphabetically
-nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+nnoremap <leader>S ?{<cr>jV/^\s*\}<cr>k:sort<cr>:noh<cr>
 
 " CoffeeScript compile
 let coffee_compile_on_save = 1
 
 " ZoomWin configuration
-map <Leader>z :ZoomWin<CR>
+map <leader>z :ZoomWin<cr>
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <leader>rt :!ctags --extra=+f -R *<cr><cr>
 
 " Remember last location in file
 if has("autocmd")
@@ -101,19 +105,17 @@ endfunction
 
 function s:setupMarkup()
   call s:setupWrapping()
-  map <buffer> <Leader>p :Mm <CR>
+  map <buffer> <leader>p :Mm <cr>
 endfunction
 
 " make and python use real tabs
 au FileType make                                     set noexpandtab
 au FileType python                                   set noexpandtab
 
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
-
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
+" txt files have special wrapping
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " allow backspacing over everything in insert mode
@@ -123,22 +125,22 @@ set backspace=indent,eol,start
 filetype plugin indent on
 
 " Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Normal mode: <leader>e
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <cr>
 
 " Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+" Normal mode: <leader>t
+map <leader>te :tabe <C-R>=expand("%:p:h") . "/" <cr>
 
 " Fast switching between tabs
-map <Leader>. :tabn<CR>
+map <leader>. :tabn<cr>
 
 " Open a terminal in the current directory
-map <Leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <CR> <CR> <CR>
+map <leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <cr> <cr> <cr>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <cr>
 
 " Easily edit this file
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
