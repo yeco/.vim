@@ -1,6 +1,10 @@
 " Environment
 set columns=170 lines=40
 set guioptions-=T
+
+" Crazy hack to get GVim to remove all scrollbars
+set guioptions+=LlRrb
+set guioptions-=LlRrb
 set guifont=Liberation\ Mono\ 10
 
 " Project Tree
