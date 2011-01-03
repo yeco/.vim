@@ -1,8 +1,7 @@
 " Environment
 set columns=170 lines=40
 set guioptions-=T
-set guifont=Monospace\ 10
-color jellybeans
+set guifont=Liberation\ Mono\ 10
 
 " Project Tree
 " autocmd VimEnter * NERDTree

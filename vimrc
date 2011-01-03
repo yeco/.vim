@@ -1,3 +1,5 @@
+call pathogen#runtime_append_all_bundles()
+
 " Environment
 set nocompatible
 set encoding=utf-8
