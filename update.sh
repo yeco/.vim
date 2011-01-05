@@ -4,7 +4,7 @@ DOTVIM="$HOME/.vim"
 
 if [ ! -e `which git` ]
 then
-  echo "You need git. Try running install_git"
+  echo "You need git. On Ubuntu, install with sudo apt-get install git-core"
   exit 0
 fi
 
@@ -27,6 +27,22 @@ get_repo() {
         echo "Cloning repo for $repo"
         git clone git://github.com/$gh_user/$repo.git
     fi
+}
+
+get_other_repo() {
+   path=$1
+   repo=$2
+   echo "Checking $repo"
+   if [ -d "$DOTVIM/bundle/$repo/" ]
+   then
+      echo "Pulling latest from $repo"
+      cd $DOTVIM/bundle/$repo
+      git pull origin master
+      cd ..
+   else
+      echo "Cloning repo for $repo"
+      git clone $url$repo
+   fi
 }
 
 echo "Creating .vim folders if necessary"
@@ -78,6 +94,9 @@ get_repo "kchmck" "vim-coffee-script"
 
 echo "Installing vim-markdown-preview"
 get_repo "robgleeson" "vim-markdown-preview"
+
+echo "Installing vcscommand"
+get_other_repo "git://repo.or.cz/" "vcscommand"
 
 cd $DOTVIM/autoload
 echo "Fetching latest pathogen.vim"

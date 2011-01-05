@@ -34,14 +34,14 @@ set wrap
 set scrolloff=3
 
 " Expand all tabs to four spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=3
+set shiftwidth=3
+set softtabstop=3
 set expandtab
 set autoindent
 
 " Show · for trailing space, \ \ for trailing tab
-set list listchars=tab:▸▸,trail:·
+set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set hlsearch
