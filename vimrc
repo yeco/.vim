@@ -137,6 +137,9 @@ map <leader>te :tabe <C-R>=expand("%:p:h") . "/" <cr>
 " Fast switching between tabs
 map <leader>. :tabn<cr>
 
+" Fast switching between windows
+map <leader>, <C-w>w
+
 " Open a terminal in the current directory
 map <leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <cr> <cr> <cr>
 
