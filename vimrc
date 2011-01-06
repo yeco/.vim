@@ -8,7 +8,6 @@ set showcmd " show last command
 set visualbell " flash screen for invalid operation
 set mouse=a " allow for full mouse support
 set ruler " show ruler
-set number " add line numbering
 set clipboard=unnamed
 set modelines=0 " disabled for security
 set cul " highlight line the cursor is on
@@ -28,6 +27,8 @@ if exists("&colorcolumn")
 
    " Relative line numbers
    set relativenumber
+else
+   set number
 endif
 
 " Change leader key to , instead of \ (easier to type)
@@ -35,6 +36,12 @@ let mapleader=","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+
+" Fast switching between tabs
+map <leader>. :tabn<cr>
+
+" Fast switching between windows
+map <leader>, <C-w>w
 
 " Use syntax highlighting
 syntax on
@@ -45,7 +52,7 @@ set nowrap
 " Show addition lines below or above the cursor when scrolling
 set scrolloff=3
 
-" Expand all tabs to four spaces
+" Expand all tabs to three spaces
 set tabstop=3
 set shiftwidth=3
 set softtabstop=3
@@ -56,14 +63,14 @@ set autoindent
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
+set hlsearch " highlight search result
+set incsearch " show matches while typing
+set ignorecase " ignore case when searching
+set smartcase " honor case if any uppercase letters are used
+set showmatch " jump to match if visible
 set magic " make regular expressions follow more closely to perl conventions
 
-" Quickly clear search highlight
+" Fast clear highlight
 nnoremap <leader><space> :noh<cr>
 
 " Prevent hitting F1 (:h) when trying to ESC
@@ -95,12 +102,6 @@ let g:CommandTMaxHeight=20
 " Ack configuration
 nnoremap <leader>a :Ack 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-" Strip all trailing whitespace in the current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
-
-" Sort CSS properties alphabetically
-nnoremap <leader>S ?{<cr>jV/^\s*\}<cr>k:sort<cr>:noh<cr>
 
 " CoffeeScript compile
 let coffee_compile_on_save = 1
@@ -152,18 +153,18 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <cr>
 " Normal mode: <leader>t
 map <leader>te :tabe <C-R>=expand("%:p:h") . "/" <cr>
 
-" Fast switching between tabs
-map <leader>. :tabn<cr>
-
-" Fast switching between windows
-map <leader>, <C-w>w
-
 " Open a terminal in the current directory
 map <leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <cr> <cr> <cr>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <cr>
+
+" Strip all trailing whitespace in the current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+
+" Sort CSS properties alphabetically
+nnoremap <leader>S ?{<cr>jV/^\s*\}<cr>k:sort<cr>:noh<cr>
 
 " Automatically save file on focus change
 au FocusLost * :wa
