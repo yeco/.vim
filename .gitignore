@@ -4,3 +4,4 @@ snippets
 .VimballRecord
 *.swp
 bundle
+undodir

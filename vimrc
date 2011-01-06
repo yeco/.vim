@@ -1,34 +1,46 @@
 call pathogen#runtime_append_all_bundles()
 
 " Environment
-set nocompatible
-set encoding=utf-8
-set showmode
-set showcmd
-set visualbell
-set mouse=a
-set ruler
-set number
+set nocompatible " don't limit vim trying to support vi
+set encoding=utf-8 " set encoding to utf-8
+set showmode " show which mode
+set showcmd " show last command
+set visualbell " flash screen for invalid operation
+set mouse=a " allow for full mouse support
+set ruler " show ruler
+set number " add line numbering
 set clipboard=unnamed
-set modelines=0
-set cul
-set ttyfast
-set term=xterm-256color
+set modelines=0 " disabled for security
+set cul " highlight line the cursor is on
+set ttyfast " fast terminal connection is in use, more redraws allowed
+set nolazyredraw " prevent redraw while executing macros
+
+set term=xterm-256color " allow for more color
 color jellybeans
 
 " Vim 7.3
 if exists("&colorcolumn")
-    set colorcolumn=85
+   set colorcolumn=115
+
+   " Persistent undo setup
+   set undodir=~/.vim/undodir
+   set undofile
+
+   " Relative line numbers
+   set relativenumber
 endif
 
 " Change leader key to , instead of \ (easier to type)
 let mapleader=","
 
+" Fast saving
+nmap <leader>w :w!<cr>
+
 " Use syntax highlighting
 syntax on
 
-" Enable word wrapping
-set wrap
+" Disable word wrapping
+set nowrap
 
 " Show addition lines below or above the cursor when scrolling
 set scrolloff=3
@@ -49,9 +61,15 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
+set magic " make regular expressions follow more closely to perl conventions
 
 " Quickly clear search highlight
 nnoremap <leader><space> :noh<cr>
+
+" Prevent hitting F1 (:h) when trying to ESC
+inoremap<F1> <ESC>
+nnoremap<F1> <ESC>
+vnoremap<F1> <ESC>
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -147,5 +165,11 @@ map <leader>gt :!gnome-terminal --working-directory=<C-R>=expand("%:p:h") <cr> <
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <cr>
 
+" Automatically save file on focus change
+au FocusLost * :wa
+
 " Easily edit this file
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Source this file after editing
+au! BufWritePost .vimrc source ~/.vimrc

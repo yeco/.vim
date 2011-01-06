@@ -1,6 +1,7 @@
 " Environment
 set columns=170 lines=40
 set guioptions-=T
+set t_Co=256
 
 " Crazy hack to get GVim to remove all scrollbars
 set guioptions+=LlRrb
