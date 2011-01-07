@@ -96,6 +96,9 @@ get_repo "kchmck" "vim-coffee-script"
 echo "Installing vim-markdown-preview"
 get_repo "robgleeson" "vim-markdown-preview"
 
+echo "Installing jellybeans"
+get_repo "nanotech" "jellybeans.vim"
+
 echo "Installing vcscommand"
 get_other_repo "git://repo.or.cz/" "vcscommand"
 
