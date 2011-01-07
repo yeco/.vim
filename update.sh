@@ -99,6 +99,9 @@ get_repo "robgleeson" "vim-markdown-preview"
 echo "Installing jellybeans"
 get_repo "nanotech" "jellybeans.vim"
 
+echo "Installing southwest-fog, et al."
+get_repo "mgutz" "vim-colors"
+
 echo "Installing vcscommand"
 get_other_repo "git://repo.or.cz/" "vcscommand"
 
