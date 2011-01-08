@@ -42,6 +42,10 @@ map <leader>. :tabn<cr>
 
 " Fast switching between windows
 map <leader>, <C-w>w
+map <leader>h <C-w>h
+map <leader>j <C-w>r
+map <leader>k <C-w>k
+map <leader>l <C-w>l
 
 " Use syntax highlighting
 syntax on
