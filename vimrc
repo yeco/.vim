@@ -14,6 +14,9 @@ set cul " highlight line the cursor is on
 set ttyfast " fast terminal connection is in use, more redraws allowed
 set nolazyredraw " prevent redraw while executing macros
 
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 set term=xterm-256color " allow for more color
 color jellybeans
 

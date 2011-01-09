@@ -50,7 +50,7 @@ echo "Creating .vim folders if necessary"
 mkdir -p $DOTVIM/{autoload,bundle,ftdetect,syntax}
 cd $DOTVIM/bundle/
 
-tpope_repos=(git surround unimpaired abolish repeat markdown ragtag)
+tpope_repos=(git surround unimpaired abolish repeat markdown ragtag fugitive)
 
 for r in ${tpope_repos[*]}; do
 	repo="vim-$r"
