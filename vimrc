@@ -37,6 +37,9 @@ let mapleader=","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Allow saving when you forgot sudo
+cmap w!! w !sudo tee % >/dev/null
+
 " Fast switching between tabs
 map <leader>. :tabn<cr>
 
