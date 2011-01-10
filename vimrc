@@ -49,9 +49,12 @@ map <leader>. :tabn<cr>
 " Fast switching between windows
 map <leader>, <C-w>w
 map <leader>h <C-w>h
-map <leader>j <C-w>r
+map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>l <C-w>l
+
+" Fast switching out of insert mode
+imap jj <Esc>
 
 " Use syntax highlighting
 syntax on
