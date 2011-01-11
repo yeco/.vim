@@ -72,6 +72,9 @@ get_repo "msanders" "snipmate.vim"
 echo "Installing vim-ruby"
 get_repo "vim-ruby" "vim-ruby"
 
+echo "Installing vim-matchit"
+get_repo "mhz" "vim-matchit"
+
 echo "Installing taglist.vim"
 get_repo "jc00ke" "taglist.vim"
 

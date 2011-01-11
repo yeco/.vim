@@ -1,4 +1,5 @@
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " Environment
 set nocompatible " don't limit vim trying to support vi
