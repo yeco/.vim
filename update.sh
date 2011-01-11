@@ -90,6 +90,9 @@ get_repo "ervandew" "supertab"
 echo "Installing align"
 get_repo "tsaleh" "vim-align"
 
+echo "Installing ZoomWin"
+get_repo "vim-scripts" "ZoomWin"
+
 echo "Installing vim-indent-object"
 get_repo "michaeljsmith" "vim-indent-object"
 
