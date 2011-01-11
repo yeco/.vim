@@ -82,7 +82,7 @@ echo "Installing javascript.vim"
 get_repo "pangloss" "vim-javascript"
 
 echo "Installing supertab"
-get_repo "tsaleh" "vim-supertab"
+get_repo "ervandew" "supertab"
 
 echo "Installing align"
 get_repo "tsaleh" "vim-align"
