@@ -108,6 +108,12 @@ get_repo "nanotech" "jellybeans.vim"
 echo "Installing neverland"
 get_repo "trapd00r" "neverland-vim-theme"
 
+echo "Installing perfect"
+get_repo "kossnocorp" "perfect.vim"
+
+echo "Installing up"
+get_repo "kossnocorp" "up.vim"
+
 echo "Installing southwest-fog, et al."
 get_repo "mgutz" "vim-colors"
 
