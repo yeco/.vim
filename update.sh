@@ -105,6 +105,9 @@ get_repo "robgleeson" "vim-markdown-preview"
 echo "Installing jellybeans"
 get_repo "nanotech" "jellybeans.vim"
 
+echo "Installing neverland"
+get_repo "trapd00r" "neverland-vim-theme"
+
 echo "Installing southwest-fog, et al."
 get_repo "mgutz" "vim-colors"
 
