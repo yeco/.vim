@@ -14,6 +14,7 @@ set modelines=0 " disabled for security
 set cul " highlight line the cursor is on
 set ttyfast " fast terminal connection is in use, more redraws allowed
 set nolazyredraw " prevent redraw while executing macros
+set autowriteall " write changes when switching buffers
 
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -46,6 +47,9 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Fast switching between tabs
 map <leader>. :tabn<cr>
+
+" Fast switching between prev buffer
+map <leader>b :b#<cr>
 
 " Fast switching between windows
 map <leader>, <C-w>w
@@ -181,7 +185,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 nnoremap <leader>S ?{<cr>jV/^\s*\}<cr>k:sort<cr>:noh<cr>
 
 " Automatically save file on focus change
-au FocusLost * :wa
+au FocusLost * :up
 
 " Easily edit this file
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
