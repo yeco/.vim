@@ -71,9 +71,9 @@ set nowrap
 set scrolloff=3
 
 " Expand all tabs to three spaces
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 
