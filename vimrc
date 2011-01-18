@@ -41,7 +41,7 @@ endif
 let mapleader=","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :up<cr>
 
 " Allow saving when you forgot sudo
 cmap w!! w !sudo tee % >/dev/null
@@ -71,10 +71,10 @@ set nowrap
 " Show addition lines below or above the cursor when scrolling
 set scrolloff=3
 
-" Expand all tabs to three spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" Expand all tabs to two spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -127,6 +127,10 @@ let coffee_compile_on_save = 1
 
 " ZoomWin configuration
 map <leader>z :ZoomWin<cr>
+
+" delimitMate configuration
+let loaded_delimitMate = 0
+let delimitMate_expand_cr = 1
 
 " CTags
 map <leader>rt :!ctags --extra=+f -R *<cr><cr>
