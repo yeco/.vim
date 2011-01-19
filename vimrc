@@ -125,6 +125,9 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " CoffeeScript compile
 let coffee_compile_on_save = 1
 
+" Syntastic configuration
+nnoremap <leader>err :Errors<cr><C-W>w
+
 " ZoomWin configuration
 map <leader>z :ZoomWin<cr>
 
