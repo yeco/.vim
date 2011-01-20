@@ -63,8 +63,8 @@ get_repo "scrooloose" "nerdtree"
 echo "Installing Syntastic"
 get_repo "scrooloose" "syntastic"
 
-echo "Installing NERDCommenter"
-get_repo "jc00ke" "nerdcommenter"
+echo "Installing TComment"
+get_repo "tomtom" "tcomment_vim"
 
 echo "Installing snipMate"
 get_repo "msanders" "snipmate.vim"
