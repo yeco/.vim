@@ -40,8 +40,9 @@ endif
 " Change leader key to , instead of \ (easier to type)
 let mapleader=","
 
-" Fast saving
+" Fast write to file
 nmap <leader>w :up<cr>
+nmap <leader>u :up<cr>
 
 " Allow saving when you forgot sudo
 cmap w!! w !sudo tee % >/dev/null
