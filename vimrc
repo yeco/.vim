@@ -63,6 +63,9 @@ map <leader>l <C-w>l
 " Fast switching out of insert mode
 imap jj <Esc>
 
+" Map Y to match C and D
+nmap Y y$
+
 " Use syntax highlighting
 syntax on
 
