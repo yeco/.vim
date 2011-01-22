@@ -66,6 +66,9 @@ imap jj <Esc>
 " Map Y to match C and D
 nmap Y y$
 
+" Yank entire file (global yank)
+nmap gy ggVGy
+
 " Use syntax highlighting
 syntax on
 
