@@ -66,6 +66,9 @@ get_repo "scrooloose" "syntastic"
 echo "Installing TComment"
 get_repo "tomtom" "tcomment_vim"
 
+echo "Installing vim-indent-guides"
+get_repo "nathanaelkane" "vim-indent-guides"
+
 echo "Installing snipMate"
 get_repo "msanders" "snipmate.vim"
 
