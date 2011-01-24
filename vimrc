@@ -145,6 +145,17 @@ let delimitMate_expand_cr = 1
 " CTags
 map <leader>rt :!ctags --extra=+f -R *<cr><cr>
 
+" VimOrganizer configuration
+let g:org_todo_setup='TODO | DONE'
+let g:org_tag_setup='{@home(h) @work(w) @tennisclub(t)} \n {easy(e) hard(d)} \n {computer(c) phone(p)}'
+
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
+au BufRead,BufNewFile *.org            call org#SetOrgFileType()
+au BufRead *.org :PreLoadTags
+au BufWrite *.org :PreWriteTags
+au BufWritePost *.org :PostWriteTags
+au BufRead,BufNewFile *.org            color org_dark
+
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")

@@ -99,6 +99,9 @@ get_repo "tsaleh" "vim-align"
 echo "Installing delimitMate"
 get_repo "Raimondi" "delimitMate"
 
+echo "Installing vimorganizer"
+get_repo "hsitz" "VimOrganizer"
+
 echo "Installing ZoomWin"
 get_repo "vim-scripts" "ZoomWin"
 
