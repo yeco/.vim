@@ -16,6 +16,7 @@ set cul " highlight line the cursor is on
 set ttyfast " fast terminal connection is in use, more redraws allowed
 set nolazyredraw " prevent redraw while executing macros
 set autowriteall " write changes when switching buffers
+set number
 
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -30,11 +31,6 @@ if exists("&colorcolumn")
    " Persistent undo setup
    set undodir=~/.vim/undodir
    set undofile
-
-   " Relative line numbers
-   set relativenumber
-else
-   set number
 endif
 
 " Change leader key to , instead of \ (easier to type)

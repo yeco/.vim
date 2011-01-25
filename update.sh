@@ -47,7 +47,7 @@ get_other_repo() {
 }
 
 echo "Creating .vim folders if necessary"
-mkdir -p $DOTVIM/{autoload,bundle,ftdetect,syntax}
+mkdir -p $DOTVIM/{autoload,bundle}
 cd $DOTVIM/bundle/
 
 tpope_repos=(git surround unimpaired abolish repeat markdown ragtag fugitive)
@@ -126,16 +126,10 @@ get_repo "trapd00r" "neverland-vim-theme"
 echo "Installing perfect"
 get_repo "kossnocorp" "perfect.vim"
 
-echo "Installing southwest-fog, et al."
-get_repo "mgutz" "vim-colors"
-
-echo "Installing vcscommand"
-get_other_repo "git://repo.or.cz/" "vcscommand"
-
-echo "Installing command-t"
-get_other_repo "git://git.wincent.com/" "command-t"
-echo "Building commant-t"
-cd $DOTVIM/bundle/command-t
+echo "Installing Command-T"
+get_repo "wincent" "Command-T"
+echo "Building Commant-T"
+cd $DOTVIM/bundle/Command-T
 rake make
 
 cd $DOTVIM/autoload
