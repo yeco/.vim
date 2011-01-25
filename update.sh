@@ -105,6 +105,9 @@ get_repo "hsitz" "VimOrganizer"
 echo "Installing ZoomWin"
 get_repo "vim-scripts" "ZoomWin"
 
+echo "Installing mru,vim"
+get_repo "vim-scripts" "mru.vim"
+
 echo "Installing vim-indent-object"
 get_repo "michaeljsmith" "vim-indent-object"
 
