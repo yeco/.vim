@@ -131,6 +131,10 @@ let coffee_compile_on_save = 1
 " Syntastic configuration
 nnoremap <leader>err :Errors<cr><C-W>w
 
+" MRU configuration
+map <leader>m :MRU<cr>
+let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*|COMMIT_EDITMSG'
+
 " ZoomWin configuration
 map <leader>z :ZoomWin<cr>
 
